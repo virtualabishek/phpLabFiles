@@ -13,6 +13,7 @@ if($connect->connect_error) {
 }
 
 
-$SQLquery = "INSERT INTO studentInformation(id, name, password) VALUES (4, "Ram", "ramdont@123")";
+$SQLquery = "INSERT INTO studentInformation(name, password) VALUES ('Ram', 'ramdont@123')";
+
 $connect->query($SQLquery);
 ?>
