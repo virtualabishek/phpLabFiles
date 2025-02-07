@@ -142,7 +142,7 @@ input[type="radio"]:checked + label {
 
     <div class="login-container">
         <h2>Signin</h2>
-        <form>
+        <form method="POST" action="/backend/main.php>
             <p>Already a member?  <a href="signin.php">Click Here </a>Log In</p>
             <div class="input-group">
                 <label for="fname">First Name</label>
