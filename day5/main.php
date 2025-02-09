@@ -32,14 +32,23 @@ echo "<pre>";
 print_r($result); 
 // This print the whole line.
 
-if($result->num_rows>0)  
-    while ($row = $result->fetch_assoc()) {
-        echo "id:= ".$row["id"]."<br>";
+if($result->num_rows>0)  {
+    $row = $result->fetch_assoc();
+    // $row = $result->fetch_array(); Print the whole array
+        echo "Name:= ".$row["fname"]."<br>";
         
         // print whole array.
         print_r($row);
-
     }
+
+    if($result->num_rows==0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "Name:= ".$row["fname"]."<br>";
+    
+        }
+    }
+
+
 
 
 echo ("</pre>");
