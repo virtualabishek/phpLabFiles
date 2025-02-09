@@ -123,7 +123,7 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
             </div>
-
+        <p>Hi</p>
            
             <button type="submit" class="login-btn">Login</button>
             <p>Already a member?  <a href="signin.php">Click Here </a>To Create Account</a></p>
