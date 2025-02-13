@@ -36,7 +36,7 @@ class ConnectDatabase implements connectDB {
         }
     }
     public function insertData() {
-        $
+        
     }
     
 }

@@ -29,10 +29,10 @@ $(document).ready(function() {
             data: { name: name, mob: mob },
             success: function(response) {
                 var data = JSON.parse(response);
-                // $("#response").html("Name: " + data.name + "<br>Mobile: " + data.mob);
+                $("#response").html("Name: " + data.name + "<br>Mobile: " + data.mob);
             },
             error: function() {
-                // $("#response").html("Error occurred");
+                $("#response").html("Error occurred");
                 alert("You did something wrong! Go and die.");
             }
         });
