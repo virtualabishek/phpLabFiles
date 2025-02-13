@@ -1,3 +1,3 @@
 <?php
-echo ("Response from form.")
+echo json_encode($_POST);
 ?>
