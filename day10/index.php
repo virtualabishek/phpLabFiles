@@ -13,7 +13,7 @@
         class="space-y-4"
         method="post"
         enctype="multipart/form-data"
-        action="/phpLab/day9/main.php"
+        action="/phpLab/day10/main.php"
       >
         <input
           type="file"
@@ -56,7 +56,7 @@
     }
 
     // Fetch data from database
-    $sql = "SELECT * FROM sampleStudents ORDER BY id";
+    $sql = "SELECT * FROM test  Students ORDER BY id";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

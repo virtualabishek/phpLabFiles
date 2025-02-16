@@ -99,6 +99,7 @@ $DbName = "exampleDB";
         while($row = $result->fetch_assoc()){
           echo '<tr>';
           echo '<td>'.htmlspecialchars($row["id"]).'</td>';
+          echo '<td>'.htmlspecialchars($row["fname"]).'</td>;
           echo '</tr>';
         }
         echo '</tbody>';

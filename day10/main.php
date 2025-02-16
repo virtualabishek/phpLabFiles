@@ -76,7 +76,7 @@ class InsertData {
         
         
 
-        $query = "INSERT INTO sampleStudents (id, fname, lname, phone, email, age, degree, course, joined_date) 
+        $query = "INSERT INTO testStudents (id, fname, lname, phone, email, age, degree, course, joined_date) 
                  VALUES ('$id', '$fname', '$lname', '$phone', '$email', '$age', '$degree', '$course', '$joined_date')";
         
         if ($this->database->connection->query($query)) {
@@ -94,7 +94,7 @@ class InsertData {
         echo "</div>";
         
         // Redirect back to display.php after 3 seconds
-        header("refresh:3;url=/phpLab/day9/display.php");
+        header("refresh:3;url=/phpLab/day10/index.php");
     }
     
     public function __destruct()
