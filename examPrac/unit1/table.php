@@ -26,7 +26,7 @@ $result = $dbConnect->query($sql);
                 while ($row = $result->fetch_assoc()) { ?>
     
                 
-                ?>
+        
                 <td>
                     <?php 
                     echo stripslashes($row['Title']);
