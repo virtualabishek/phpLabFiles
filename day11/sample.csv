@@ -1,0 +1,16 @@
+id,fname,lname,phone,email,age,degree,course,joined_date
+1,Ram,Thapa,9862123132,ramthapa@gmail.com,23,BIT (Running),UI/UX,2/14/2025
+2,Shyam,Bhatta,9812345678,shyamb@gmail.com,24,BIT (Completed),Web Tech,2/14/2025
+3,Sita,Rai,9801122334,sitarai@gmail.com,22,BSc CSIT (Running),Mobile App,2/15/2025
+4,Gopal,Lama,9845567788,gopallama@gmail.com,25,BCA (Completed),MERN,2/16/2025
+5,Kiran,Shrestha,9867891234,krshrestha@gmail.com,21,BIT (Running),WordPress,2/17/2025
+6,Rita,Gurung,9803344556,ritag@gmail.com,23,BSc CSIT (Running),AI/ML,2/18/2025
+7,Anita,Karki,9841239876,anitak@gmail.com,26,MCA (Completed),Cyber Security,2/19/2025
+8,Bishal,Poudel,9866543210,bishalp@gmail.com,22,BCA (Running),Data Science,2/20/2025
+9,Kushal,Dahal,9811122334,kushald@gmail.com,24,BSc CSIT (Completed),DevOps,2/21/2025
+10,Sarita,Tamang,9802233445,saritat@gmail.com,23,BIT (Running),Cloud Computing,2/22/2025
+11,Santosh,Adhikari,9845567789,santosha@gmail.com,25,MSc IT (Completed),Full Stack,2/23/2025
+12,Pooja,Bhattarai,9867896543,poojabh@gmail.com,22,BCA (Running),Blockchain,2/24/2025
+13,Niraj,Magar,9806677889,nirajm@gmail.com,23,BIT (Running),Software Testing,2/25/2025
+14,Sunita,Baral,9849988776,sunitab@gmail.com,26,MSc IT (Completed),Game Development,2/26/2025
+15,Deepak,Khadka,9817766554,deepakk@gmail.com,24,BSc CSIT (Running),Networking,2/27/2025
