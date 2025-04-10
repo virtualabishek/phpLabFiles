@@ -76,7 +76,7 @@ PHP supports the following data types:
 
 ### Variables
 
-- Declared using `$` (e.g., `$name = "Abhi";`)
+- Declared using `$` (e.g., `$name = "Abi";`)
 - Loosely typed (no need to define type explicitly)
 - Case-sensitive
 - Cannot start with a number
