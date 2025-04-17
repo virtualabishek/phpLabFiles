@@ -4,6 +4,7 @@ $serverAddress = "localhost";
 $dbUser = "root";
 $dbPassword = "imp2083";
 $dbName = "exampleDB";
+// $connect_erorr = "error";
 
 $connectToDb = new mysqli($serverAddress, $dbName, $dbUser, $dbPassword);
 
