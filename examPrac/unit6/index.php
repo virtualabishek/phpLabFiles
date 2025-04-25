@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Management</title>
+    <title>Student Manclassment</title>
     <style>
         table { border-collapse: collapse; width: 100%; }
         th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-    <h2>Student Management</h2>
+    <h2>Student Manclassment</h2>
     
     <!-- Create/Update Form -->
     <form action="index.php" method="POST">
@@ -19,15 +19,15 @@
         <input type="text" id="name" name="name" value="<?php echo isset($editName) ? $editName : ''; ?>" required><br><br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" value="<?php echo isset($editEmail) ? $editEmail : ''; ?>" required><br><br>
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" value="<?php echo isset($editAge) ? $editAge : ''; ?>" required><br><br>
+        <label for="class">class:</label>
+        <input type="number" id="class" name="class" value="<?php echo isset($editclass) ? $editclass : ''; ?>" required><br><br>
         <input type="submit" name="submit" value="Save Student">
     </form>
 
     <!-- Display Students -->
     <h3>Student List</h3>
     <?php
-    $conn = new mysqli("localhost", "root", "", "school");
+    $conn = new mysqli("localhost", "root", "imp2083", "phpLab");
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
@@ -37,17 +37,17 @@
         $id = $_POST['id'] ?? '';
         $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
         $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
-        $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_NUMBER_INT);
+        $class = filter_input(INPUT_POST, 'class', FILTER_SANITIZE_NUMBER_INT);
 
-        if (!empty($name) && !empty($email) && !empty($age)) {
+        if (!empty($name) && !empty($email) && !empty($class)) {
             if ($id) {
                 // Update
-                $stmt = $conn->prepare("UPDATE students SET name=?, email=?, age=? WHERE id=?");
-                $stmt->bind_param("ssii", $name, $email, $age, $id);
+                $stmt = $conn->prepare("UPDATE students SET name=?, email=?, class=? WHERE id=?");
+                $stmt->bind_param("ssii", $name, $email, $class, $id);
             } else {
                 // Create
-                $stmt = $conn->prepare("INSERT INTO students (name, email, age) VALUES (?, ?, ?)");
-                $stmt->bind_param("ssi", $name, $email, $age);
+                $stmt = $conn->prepare("INSERT INTO students (name, email, class) VALUES (?, ?, ?)");
+                $stmt->bind_param("ssi", $name, $email, $class);
             }
             if ($stmt->execute()) {
                 echo "<p style='color: green;'>Operation successful!</p>";
@@ -76,7 +76,7 @@
     // Handle Edit (Populate Form)
     if (isset($_GET['edit'])) {
         $id = filter_input(INPUT_GET, 'edit', FILTER_SANITIZE_NUMBER_INT);
-        $stmt = $conn->prepare("SELECT name, email, age FROM students WHERE id=?");
+        $stmt = $conn->prepare("SELECT name, email, class FROM students WHERE id=?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -84,21 +84,21 @@
             $editId = $id;
             $editName = $row['name'];
             $editEmail = $row['email'];
-            $editAge = $row['age'];
+            $editclass = $row['class'];
         }
         $stmt->close();
     }
 
     // Read (Display Table)
-    $result = $conn->query("SELECT id, name, email, age FROM students");
+    $result = $conn->query("SELECT id, name, email, class FROM students");
     if ($result->num_rows > 0) {
-        echo "<table><tr><th>ID</th><th>Name</th><th>Email</th><th>Age</th><th>Actions</th></tr>";
+        echo "<table><tr><th>ID</th><th>Name</th><th>Email</th><th>class</th><th>Actions</th></tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr>
                 <td>{$row['id']}</td>
                 <td>{$row['name']}</td>
                 <td>{$row['email']}</td>
-                <td>{$row['age']}</td>
+                <td>{$row['class']}</td>
                 <td>
                     <a href='index.php?edit={$row['id']}'>Edit</a> |
                     <a href='index.php?delete={$row['id']}' onclick='return confirm(\"Are you sure?\")'>Delete</a>
