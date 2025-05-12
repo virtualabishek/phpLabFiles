@@ -22,7 +22,7 @@ if (($header = fgetcsv($file)) !== false) {
     echo "</tr>";
 }
 
-// Read the data rows
+// Read the data rows   
 while (($row = fgetcsv($file)) !== false) {
     echo "<tr>";
     foreach ($row as $cell) {
